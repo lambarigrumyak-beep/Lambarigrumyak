@@ -181,6 +181,78 @@
             transform: scale(1.05);
         }
 
+        /* Games Section */
+        .games-section {
+            padding: 80px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--secondary-color);
+        }
+
+        .game-icon {
+            font-size: 4rem;
+            padding: 40px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .game-info {
+            padding: 30px;
+        }
+
+        .game-info h3 {
+            color: var(--main-color);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            text-shadow: 0 0 10px rgba(255, 0, 102, 0.2);
+            font-weight: 700;
+        }
+
+        .game-info p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 1.1rem;
+        }
+
+        .game-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--main-color), var(--accent-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-btn:hover {
+            box-shadow: var(--neon-glow);
+            transform: translateY(-3px) scale(1.05);
+        }
+
         /* Content Section */
         .content-types {
             display: grid;
@@ -591,7 +663,7 @@
                 padding: 20px;
             }
             
-            .music-btn, .series-btn {
+            .music-btn, .series-btn, .game-btn {
                 padding: 15px 30px;
                 font-size: 1.1rem;
             }
@@ -610,6 +682,7 @@
             <nav class="nav-links">
                 <a href="#home">Главная</a>
                 <a href="#platforms">Площадки</a>
+                <a href="#games">Игры</a>
                 <a href="#content">Контент</a>
                 <a href="#shop">Магазин</a>
                 <a href="#math">Математика</a>
@@ -647,16 +720,43 @@
                     <a href="https://t.me/lambarigrumyak" class="platform-link" target="_blank">Присоединиться</a>
                 </div>
                 <div class="platform-card fade-in">
-                    <div class="platform-icon">🕹️</div>
-                    <h3>Roblox</h3>
-                    <p>Наша собственная игра, где можно стать частью вселенной Ламбаригрумяк и проверить 1 = мяк на практике!</p>
-                    <a href="https://www.roblox.com/games/18795440538/Lambarigrumyak" class="platform-link" target="_blank">Играть</a>
-                </div>
-                <div class="platform-card fade-in">
                     <div class="platform-icon">🛒</div>
                     <h3>Магазин</h3>
                     <p>Эксклюзивный мерч с ламбаригрумяк и подпись от самого ламбаригрумяка и цифровые товары для настоящих фанатов. Выделяйся из толпы!</p>
                     <a href="https://t.me/lambarigrumyak_shop" class="platform-link" target="_blank">Купить</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games-section" id="games">
+        <div class="container">
+            <h2 class="section-title fade-in">Наши игры</h2>
+            <div class="games-grid">
+                <div class="game-card fade-in">
+                    <div class="game-icon">🧗‍♂️</div>
+                    <div class="game-info">
+                        <h3>Ламбаригрумяк ОББИ</h3>
+                        <p>Увлекательная паркур-игра с препятствиями в стиле Ламбаригрумяк! Пройди все уровни и докажи, что ты настоящий мастер паркура!</p>
+                        <a href="https://www.roblox.com/games/123486743767790/Lambarigrumyak-OBBY" class="game-btn" target="_blank">Играть в ОББИ</a>
+                    </div>
+                </div>
+                <div class="game-card fade-in">
+                    <div class="game-icon">👻</div>
+                    <div class="game-info">
+                        <h3>Ламбаригрумяк Хоррор</h3>
+                        <p>Страшная хоррор-игра с элементами выживания! Осмелься зайти в темный мир Ламбаригрумяк и выживи до рассвета!</p>
+                        <a href="https://www.roblox.com/games/76179351077901/Lambarigrumyak-Horror" class="game-btn" target="_blank">Играть в Хоррор</a>
+                    </div>
+                </div>
+                <div class="game-card fade-in">
+                    <div class="game-icon">🎭</div>
+                    <div class="game-info">
+                        <h3>Ламбаригрумяк RP</h3>
+                        <p>Ролевая игра, где ты можешь стать частью вселенной Ламбаригрумяк! Создавай свои истории и взаимодействуй с другими игроками!</p>
+                        <a href="https://www.roblox.com/games/18795440538/Lambarigrumyak-RP" class="game-btn" target="_blank">Играть в RP</a>
+                    </div>
                 </div>
             </div>
         </div>
