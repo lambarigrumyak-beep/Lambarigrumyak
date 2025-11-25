@@ -637,6 +637,76 @@
             line-height: 1.6;
         }
 
+        /* History Section */
+        .history-section {
+            padding: 80px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .history-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .history-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .history-header {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .history-header:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .history-header h3 {
+            color: var(--main-color);
+            font-size: 1.8rem;
+            text-shadow: 0 0 10px rgba(255, 0, 102, 0.3);
+            font-weight: 700;
+        }
+
+        .history-toggle {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .history-content {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .history-content.active {
+            padding: 30px;
+            max-height: 1000px;
+        }
+
+        .history-content p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .history-highlight {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -671,6 +741,14 @@
             .series-title {
                 font-size: 1.8rem;
             }
+            
+            .history-header {
+                padding: 20px;
+            }
+            
+            .history-header h3 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -685,6 +763,7 @@
                 <a href="#games">Игры</a>
                 <a href="#content">Контент</a>
                 <a href="#shop">Магазин</a>
+                <a href="#history">История</a>
                 <a href="#math">Математика</a>
                 <a href="#series">Сериал</a>
                 <a href="#contact">Связь</a>
@@ -828,6 +907,34 @@
         </div>
     </section>
 
+    <!-- History Section -->
+    <section class="history-section" id="history">
+        <div class="container">
+            <h2 class="section-title fade-in">Наша история</h2>
+            <div class="history-container">
+                <div class="history-card fade-in">
+                    <div class="history-header" id="historyToggle">
+                        <h3>Как появился Ламбаригрумяк</h3>
+                        <div class="history-toggle">+</div>
+                    </div>
+                    <div class="history-content" id="historyContent">
+                        <p>Ламбаригрумяк появился так. Двоя из создателей однажды в 2024 году строили ламбаргини. Позже им пришла идея сделать что то крупное; компанию.</p>
+                        
+                        <p>Ламбаригрумяк по частям: <span class="history-highlight">Ламбар</span>, <span class="history-highlight">игру</span>, <span class="history-highlight">мяк</span>.</p>
+                        
+                        <p><span class="history-highlight">Ламбар</span> - означает ламбаргини (та самая которую строили двоя создателей)</p>
+                        
+                        <p><span class="history-highlight">Игру</span> - означает игрульки. Игрульки это просто прикол и мы его добавили в заголовок.</p>
+                        
+                        <p><span class="history-highlight">Мяк</span> -- мякякяк. Это тоже прикол.</p>
+                        
+                        <p>Так и получился ламбаригрумяк.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Math Section -->
     <section class="section" id="math">
         <div class="container">
@@ -922,9 +1029,20 @@
             });
         }
 
+        // History Toggle
         document.addEventListener('DOMContentLoaded', function() {
             checkScroll();
             window.addEventListener('scroll', checkScroll);
+            
+            // История: переключение видимости
+            const historyToggle = document.getElementById('historyToggle');
+            const historyContent = document.getElementById('historyContent');
+            const historyToggleIcon = historyToggle.querySelector('.history-toggle');
+            
+            historyToggle.addEventListener('click', function() {
+                historyContent.classList.toggle('active');
+                historyToggleIcon.textContent = historyContent.classList.contains('active') ? '−' : '+';
+            });
         });
     </script>
 </body>
