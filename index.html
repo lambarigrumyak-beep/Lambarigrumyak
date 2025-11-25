@@ -404,6 +404,82 @@
             transform: translateY(-5px) scale(1.05);
         }
 
+        /* Series Section */
+        .series-section {
+            padding: 80px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .series-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .series-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .series-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-color);
+        }
+
+        .series-icon {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        .series-info {
+            text-align: center;
+        }
+
+        .series-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+            text-shadow: 0 0 15px rgba(0, 153, 255, 0.4);
+        }
+
+        .series-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .series-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: linear-gradient(45deg, #ff6600, #ff3300);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .series-btn:hover {
+            box-shadow: 0 0 20px rgba(255, 102, 0, 0.7), 0 0 40px rgba(255, 102, 0, 0.5);
+            transform: translateY(-5px) scale(1.05);
+        }
+
         /* Animation Classes */
         .fade-in {
             opacity: 0;
@@ -515,9 +591,13 @@
                 padding: 20px;
             }
             
-            .music-btn {
+            .music-btn, .series-btn {
                 padding: 15px 30px;
                 font-size: 1.1rem;
+            }
+            
+            .series-title {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -533,6 +613,7 @@
                 <a href="#content">Контент</a>
                 <a href="#shop">Магазин</a>
                 <a href="#math">Математика</a>
+                <a href="#series">Сериал</a>
                 <a href="#contact">Связь</a>
                 <a href="#music">Музыка</a>
             </nav>
@@ -665,6 +746,28 @@
         </div>
     </section>
 
+    <!-- Series Section -->
+    <section class="series-section" id="series">
+        <div class="container">
+            <div class="series-container fade-in">
+                <h2 class="section-title">Наш сериал</h2>
+                <div class="series-card">
+                    <div class="series-icon">🎬</div>
+                    <div class="series-info">
+                        <div class="series-title">ПЯТЬ ИГР</div>
+                        <div class="series-description">
+                            Увлекательный сериал, где мы проходим пять разных игр с уникальными правилами и сюжетными поворотами. 
+                            Присоединяйся к нашему приключению и стань свидетелем невероятных игровых моментов!
+                        </div>
+                    </div>
+                    <a href="https://youtube.com/playlist?list=PL5SCLiGZQPhMY4yNZsngZLaG5ZM_qAmln&si=MwRGFE6IAEDxauAn" class="series-btn" target="_blank">
+                        Смотреть сериал
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section с ПРАВИЛЬНЫМ текстом -->
     <section class="section" id="contact">
         <div class="container">
@@ -694,8 +797,8 @@
                 
                 <div class="music-player">
                     <div class="song-info">
-                        <div class="song-title">Ламбаригрумяк</div>
-                        <div class="song-artist">Официальный гимн Ламбаригрумяка</div>
+                        <div class="song-title">Ламбаригрумяк - "1 = мяк"</div>
+                        <div class="song-artist">Официальный гимн новой математики</div>
                     </div>
                     
                     <a href="https://youtube.com/watch?v=wUhchNMziEs&si=QoqZLk0a-eR28_9C" class="music-btn" target="_blank">
